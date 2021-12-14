@@ -1,4 +1,1874 @@
-<div id="economicCalendarContent">
+<div class="col-xs-12">
+        <div class="portlet light no-data-min-height-single-table margin-top-10 no-margin-bottom">
+            
+<div class="portlet-title nav-tabs-title">
+    <div class="caption">
+                    <ul class="nav nav-tabs ready">
+                <li class="bold disabled">
+                    <a class="disabled" data-toggle="tab" aria-expanded="true">Calendar</a>
+                </li>
+                <li class="active">
+                    <a title="Economic Calendar">Economic Calendar</a>
+                </li>
+                <li>
+                    <a href="/forex-economic-calendar/holidays" title="Holidays">Holidays</a>
+                </li>
+            </ul>
+            </div>
+        <div class="actions">
+        <div id="notificationMobileDropdown" class="display-inline-block vertical-align-middle hidden-lg dropdown">
+            <i class="fas fa-bell fa-bell-gray dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i>
+
+            <ul class="dropdown-menu pull-right padding-10 min-width-250" aria-labelledby="notificationMobileDropdown" style="right: -10px">
+                <li class="margin-bottom-5">
+                    <div>Enable or disable notifications for all the events below.</div>
+                </li>
+                <li class="text-center margin-top-5">
+                    <button class="btn default btn-responsive selectAllEventEmailNotification">Enable All</button>
+                    <button class="btn default btn-responsive deselectAllEventEmailNotification">Disable All</button>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-group btn-group-xs">
+            <a id="economicCalendarSettingsDropdownButton" class="btn btn-custom-dropdown dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+            
+
+
+<ul class="dropdown-menu pull-right dropdown-menu-container hold-on-click padding-10 max-width-580" style="text-align:center;" role="menu">
+            <li style="text-align:left;">
+            <label class="mt-checkbox mt-checkbox-outline ">
+                <input type="checkbox" id="calendarLiveNotification" checked="">
+                <label for="calendarLiveNotification">Live Notifications</label>
+                <span></span>
+            </label>
+            <i id="calendarPopoverNotification" class="fas fa-info-circle" data-original-title="" title=""></i>
+        </li>
+                <li class="padding-top-10">
+            <strong>
+                Export
+            </strong>
+        </li>
+            <li class="col-xs-6 selector-no-style" style="">
+                <a href="/calendar_statement.csv?filter=0-2-3_EUR-TRY-USD&amp;end=2021-12-15 20:59:59.059&amp;start=2021-12-13 21:00:00.0&amp;calPeriod=10&amp;tabType=0" id="calendarCSVLink" target="_blank" rel="noopener noreferrer" class="underline" title="Export calendar to CSV">
+                    CSV
+                </a>
+            </li>
+            <li class="col-xs-6 selector-no-style" style="">
+                <a href="/calendar_statement.xml?filter=0-2-3_EUR-TRY-USD&amp;end=2021-12-15 20:59:59.059&amp;start=2021-12-13 21:00:00.0&amp;calPeriod=10&amp;tabType=0" id="calendarXMLLink" target="_blank" rel="noopener noreferrer" class="underline" title="Export calendar to XML">
+                    XML
+                </a>
+            </li>
+            <div id="noDataExport" style="display: none">
+                No data to export.
+            </div>
+                <li class="padding-top-10">
+            <strong>
+                Events
+            </strong>
+        </li>
+        <li class="padding-top-10 clear-both">
+            <label class="mt-checkbox mt-checkbox-outline col-sm-3 col-xs-6">
+                <input type="checkbox" id="calendarHighImpact" checked="checked">
+                <span></span>
+                <label for="calendarHighImpact">
+                        <span class="pointer">
+                            High Impact
+                        </span>
+                </label>
+            </label>
+            <label class="mt-checkbox mt-checkbox-outline col-sm-3 col-xs-6">
+                <input type="checkbox" id="calendarMediumImpact" checked="checked">
+                <span></span>
+                <label for="calendarMediumImpact">
+                        <span class="pointer">
+                            Medium Impact
+                        </span>
+                </label>
+            </label>
+            <label class="mt-checkbox mt-checkbox-outline col-sm-3 col-xs-6">
+                <input type="checkbox" id="calendarLowImpact">
+                <span></span>
+                <label for="calendarLowImpact">
+                        <span class="pointer">
+                            Low Impact
+                        </span>
+                </label>
+            </label>
+            <label class="mt-checkbox mt-checkbox-outline col-sm-3 col-xs-6">
+                <input type="checkbox" id="calendarNoImpact" checked="checked">
+                <span></span>
+                <label for="calendarNoImpact">
+                        <span class="pointer">
+                            No Impact
+                        </span>
+                </label>
+            </label>
+        </li>
+        <div>
+        <li class="padding-top-10 clear-both">
+            <strong>
+                Symbols
+            </strong>
+            <div class="btn-group-xs btn-group-solid">
+                <input id="selectAllCalendarSymbols" type="button" class="btn default btn-responsive" value="Show all">
+                <input id="deSelectAllCalendarSymbols" type="button" class="btn default btn-responsive margin-0" value="Hide all">
+            </div>
+        </li>
+        <li class="scroll-primary padding-top-10" id="calendarCountriesCheckBoxes">
+                                        <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="AED" title="AED" name="eventsSymbol">
+                    <span></span>
+                    <label for="AED">
+                        <span class="pointer">
+                            AED
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="AFN" title="AFN" name="eventsSymbol">
+                    <span></span>
+                    <label for="AFN">
+                        <span class="pointer">
+                            AFN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ALL" title="ALL" name="eventsSymbol">
+                    <span></span>
+                    <label for="ALL">
+                        <span class="pointer">
+                            ALL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="AMD" title="AMD" name="eventsSymbol">
+                    <span></span>
+                    <label for="AMD">
+                        <span class="pointer">
+                            AMD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ANG" title="ANG" name="eventsSymbol">
+                    <span></span>
+                    <label for="ANG">
+                        <span class="pointer">
+                            ANG
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="AOA" title="AOA" name="eventsSymbol">
+                    <span></span>
+                    <label for="AOA">
+                        <span class="pointer">
+                            AOA
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ARS" title="ARS" name="eventsSymbol">
+                    <span></span>
+                    <label for="ARS">
+                        <span class="pointer">
+                            ARS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="AUD" title="AUD" name="eventsSymbol">
+                    <span></span>
+                    <label for="AUD">
+                        <span class="pointer">
+                            AUD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="AWG" title="AWG" name="eventsSymbol">
+                    <span></span>
+                    <label for="AWG">
+                        <span class="pointer">
+                            AWG
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="AZN" title="AZN" name="eventsSymbol">
+                    <span></span>
+                    <label for="AZN">
+                        <span class="pointer">
+                            AZN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BAM" title="BAM" name="eventsSymbol">
+                    <span></span>
+                    <label for="BAM">
+                        <span class="pointer">
+                            BAM
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BBD" title="BBD" name="eventsSymbol">
+                    <span></span>
+                    <label for="BBD">
+                        <span class="pointer">
+                            BBD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BDT" title="BDT" name="eventsSymbol">
+                    <span></span>
+                    <label for="BDT">
+                        <span class="pointer">
+                            BDT
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BGN" title="BGN" name="eventsSymbol">
+                    <span></span>
+                    <label for="BGN">
+                        <span class="pointer">
+                            BGN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BHD" title="BHD" name="eventsSymbol">
+                    <span></span>
+                    <label for="BHD">
+                        <span class="pointer">
+                            BHD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BIF" title="BIF" name="eventsSymbol">
+                    <span></span>
+                    <label for="BIF">
+                        <span class="pointer">
+                            BIF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BMD" title="BMD" name="eventsSymbol">
+                    <span></span>
+                    <label for="BMD">
+                        <span class="pointer">
+                            BMD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BND" title="BND" name="eventsSymbol">
+                    <span></span>
+                    <label for="BND">
+                        <span class="pointer">
+                            BND
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BOB" title="BOB" name="eventsSymbol">
+                    <span></span>
+                    <label for="BOB">
+                        <span class="pointer">
+                            BOB
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BRL" title="BRL" name="eventsSymbol">
+                    <span></span>
+                    <label for="BRL">
+                        <span class="pointer">
+                            BRL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BSD" title="BSD" name="eventsSymbol">
+                    <span></span>
+                    <label for="BSD">
+                        <span class="pointer">
+                            BSD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BTN" title="BTN" name="eventsSymbol">
+                    <span></span>
+                    <label for="BTN">
+                        <span class="pointer">
+                            BTN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BWP" title="BWP" name="eventsSymbol">
+                    <span></span>
+                    <label for="BWP">
+                        <span class="pointer">
+                            BWP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BYN" title="BYN" name="eventsSymbol">
+                    <span></span>
+                    <label for="BYN">
+                        <span class="pointer">
+                            BYN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="BZD" title="BZD" name="eventsSymbol">
+                    <span></span>
+                    <label for="BZD">
+                        <span class="pointer">
+                            BZD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CAD" title="CAD" name="eventsSymbol">
+                    <span></span>
+                    <label for="CAD">
+                        <span class="pointer">
+                            CAD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CDF" title="CDF" name="eventsSymbol">
+                    <span></span>
+                    <label for="CDF">
+                        <span class="pointer">
+                            CDF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CHF" title="CHF" name="eventsSymbol">
+                    <span></span>
+                    <label for="CHF">
+                        <span class="pointer">
+                            CHF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CLP" title="CLP" name="eventsSymbol">
+                    <span></span>
+                    <label for="CLP">
+                        <span class="pointer">
+                            CLP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CNY" title="CNY" name="eventsSymbol">
+                    <span></span>
+                    <label for="CNY">
+                        <span class="pointer">
+                            CNY
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="COP" title="COP" name="eventsSymbol">
+                    <span></span>
+                    <label for="COP">
+                        <span class="pointer">
+                            COP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CRC" title="CRC" name="eventsSymbol">
+                    <span></span>
+                    <label for="CRC">
+                        <span class="pointer">
+                            CRC
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CUC" title="CUC" name="eventsSymbol">
+                    <span></span>
+                    <label for="CUC">
+                        <span class="pointer">
+                            CUC
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CVE" title="CVE" name="eventsSymbol">
+                    <span></span>
+                    <label for="CVE">
+                        <span class="pointer">
+                            CVE
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="CZK" title="CZK" name="eventsSymbol">
+                    <span></span>
+                    <label for="CZK">
+                        <span class="pointer">
+                            CZK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="DJF" title="DJF" name="eventsSymbol">
+                    <span></span>
+                    <label for="DJF">
+                        <span class="pointer">
+                            DJF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="DKK" title="DKK" name="eventsSymbol">
+                    <span></span>
+                    <label for="DKK">
+                        <span class="pointer">
+                            DKK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="DOP" title="DOP" name="eventsSymbol">
+                    <span></span>
+                    <label for="DOP">
+                        <span class="pointer">
+                            DOP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="DZD" title="DZD" name="eventsSymbol">
+                    <span></span>
+                    <label for="DZD">
+                        <span class="pointer">
+                            DZD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="EGP" title="EGP" name="eventsSymbol">
+                    <span></span>
+                    <label for="EGP">
+                        <span class="pointer">
+                            EGP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ERN" title="ERN" name="eventsSymbol">
+                    <span></span>
+                    <label for="ERN">
+                        <span class="pointer">
+                            ERN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ETB" title="ETB" name="eventsSymbol">
+                    <span></span>
+                    <label for="ETB">
+                        <span class="pointer">
+                            ETB
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="EUR" title="EUR" name="eventsSymbol" checked="checked">
+                    <span></span>
+                    <label for="EUR">
+                        <span class="pointer">
+                            EUR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="FJD" title="FJD" name="eventsSymbol">
+                    <span></span>
+                    <label for="FJD">
+                        <span class="pointer">
+                            FJD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="FKP" title="FKP" name="eventsSymbol">
+                    <span></span>
+                    <label for="FKP">
+                        <span class="pointer">
+                            FKP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GBP" title="GBP" name="eventsSymbol">
+                    <span></span>
+                    <label for="GBP">
+                        <span class="pointer">
+                            GBP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GEL" title="GEL" name="eventsSymbol">
+                    <span></span>
+                    <label for="GEL">
+                        <span class="pointer">
+                            GEL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GHS" title="GHS" name="eventsSymbol">
+                    <span></span>
+                    <label for="GHS">
+                        <span class="pointer">
+                            GHS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GIP" title="GIP" name="eventsSymbol">
+                    <span></span>
+                    <label for="GIP">
+                        <span class="pointer">
+                            GIP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GMD" title="GMD" name="eventsSymbol">
+                    <span></span>
+                    <label for="GMD">
+                        <span class="pointer">
+                            GMD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GNF" title="GNF" name="eventsSymbol">
+                    <span></span>
+                    <label for="GNF">
+                        <span class="pointer">
+                            GNF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GTQ" title="GTQ" name="eventsSymbol">
+                    <span></span>
+                    <label for="GTQ">
+                        <span class="pointer">
+                            GTQ
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="GYD" title="GYD" name="eventsSymbol">
+                    <span></span>
+                    <label for="GYD">
+                        <span class="pointer">
+                            GYD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="HKD" title="HKD" name="eventsSymbol">
+                    <span></span>
+                    <label for="HKD">
+                        <span class="pointer">
+                            HKD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="HNL" title="HNL" name="eventsSymbol">
+                    <span></span>
+                    <label for="HNL">
+                        <span class="pointer">
+                            HNL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="HRK" title="HRK" name="eventsSymbol">
+                    <span></span>
+                    <label for="HRK">
+                        <span class="pointer">
+                            HRK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="HTG" title="HTG" name="eventsSymbol">
+                    <span></span>
+                    <label for="HTG">
+                        <span class="pointer">
+                            HTG
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="HUF" title="HUF" name="eventsSymbol">
+                    <span></span>
+                    <label for="HUF">
+                        <span class="pointer">
+                            HUF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="IDR" title="IDR" name="eventsSymbol">
+                    <span></span>
+                    <label for="IDR">
+                        <span class="pointer">
+                            IDR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ILS" title="ILS" name="eventsSymbol">
+                    <span></span>
+                    <label for="ILS">
+                        <span class="pointer">
+                            ILS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="INR" title="INR" name="eventsSymbol">
+                    <span></span>
+                    <label for="INR">
+                        <span class="pointer">
+                            INR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="IQD" title="IQD" name="eventsSymbol">
+                    <span></span>
+                    <label for="IQD">
+                        <span class="pointer">
+                            IQD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="IRR" title="IRR" name="eventsSymbol">
+                    <span></span>
+                    <label for="IRR">
+                        <span class="pointer">
+                            IRR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ISK" title="ISK" name="eventsSymbol">
+                    <span></span>
+                    <label for="ISK">
+                        <span class="pointer">
+                            ISK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="JMD" title="JMD" name="eventsSymbol">
+                    <span></span>
+                    <label for="JMD">
+                        <span class="pointer">
+                            JMD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="JOD" title="JOD" name="eventsSymbol">
+                    <span></span>
+                    <label for="JOD">
+                        <span class="pointer">
+                            JOD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="JPY" title="JPY" name="eventsSymbol">
+                    <span></span>
+                    <label for="JPY">
+                        <span class="pointer">
+                            JPY
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KES" title="KES" name="eventsSymbol">
+                    <span></span>
+                    <label for="KES">
+                        <span class="pointer">
+                            KES
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KGS" title="KGS" name="eventsSymbol">
+                    <span></span>
+                    <label for="KGS">
+                        <span class="pointer">
+                            KGS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KHR" title="KHR" name="eventsSymbol">
+                    <span></span>
+                    <label for="KHR">
+                        <span class="pointer">
+                            KHR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KMF" title="KMF" name="eventsSymbol">
+                    <span></span>
+                    <label for="KMF">
+                        <span class="pointer">
+                            KMF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KPW" title="KPW" name="eventsSymbol">
+                    <span></span>
+                    <label for="KPW">
+                        <span class="pointer">
+                            KPW
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KRW" title="KRW" name="eventsSymbol">
+                    <span></span>
+                    <label for="KRW">
+                        <span class="pointer">
+                            KRW
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KWD" title="KWD" name="eventsSymbol">
+                    <span></span>
+                    <label for="KWD">
+                        <span class="pointer">
+                            KWD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KYD" title="KYD" name="eventsSymbol">
+                    <span></span>
+                    <label for="KYD">
+                        <span class="pointer">
+                            KYD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="KZT" title="KZT" name="eventsSymbol">
+                    <span></span>
+                    <label for="KZT">
+                        <span class="pointer">
+                            KZT
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="LAK" title="LAK" name="eventsSymbol">
+                    <span></span>
+                    <label for="LAK">
+                        <span class="pointer">
+                            LAK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="LBP" title="LBP" name="eventsSymbol">
+                    <span></span>
+                    <label for="LBP">
+                        <span class="pointer">
+                            LBP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="LKR" title="LKR" name="eventsSymbol">
+                    <span></span>
+                    <label for="LKR">
+                        <span class="pointer">
+                            LKR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="LRD" title="LRD" name="eventsSymbol">
+                    <span></span>
+                    <label for="LRD">
+                        <span class="pointer">
+                            LRD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="LSL" title="LSL" name="eventsSymbol">
+                    <span></span>
+                    <label for="LSL">
+                        <span class="pointer">
+                            LSL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="LYD" title="LYD" name="eventsSymbol">
+                    <span></span>
+                    <label for="LYD">
+                        <span class="pointer">
+                            LYD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MAD" title="MAD" name="eventsSymbol">
+                    <span></span>
+                    <label for="MAD">
+                        <span class="pointer">
+                            MAD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MDL" title="MDL" name="eventsSymbol">
+                    <span></span>
+                    <label for="MDL">
+                        <span class="pointer">
+                            MDL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MGA" title="MGA" name="eventsSymbol">
+                    <span></span>
+                    <label for="MGA">
+                        <span class="pointer">
+                            MGA
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MKD" title="MKD" name="eventsSymbol">
+                    <span></span>
+                    <label for="MKD">
+                        <span class="pointer">
+                            MKD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MMK" title="MMK" name="eventsSymbol">
+                    <span></span>
+                    <label for="MMK">
+                        <span class="pointer">
+                            MMK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MNT" title="MNT" name="eventsSymbol">
+                    <span></span>
+                    <label for="MNT">
+                        <span class="pointer">
+                            MNT
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MOP" title="MOP" name="eventsSymbol">
+                    <span></span>
+                    <label for="MOP">
+                        <span class="pointer">
+                            MOP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MRO" title="MRO" name="eventsSymbol">
+                    <span></span>
+                    <label for="MRO">
+                        <span class="pointer">
+                            MRO
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MUR" title="MUR" name="eventsSymbol">
+                    <span></span>
+                    <label for="MUR">
+                        <span class="pointer">
+                            MUR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MVR" title="MVR" name="eventsSymbol">
+                    <span></span>
+                    <label for="MVR">
+                        <span class="pointer">
+                            MVR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MWK" title="MWK" name="eventsSymbol">
+                    <span></span>
+                    <label for="MWK">
+                        <span class="pointer">
+                            MWK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MXN" title="MXN" name="eventsSymbol">
+                    <span></span>
+                    <label for="MXN">
+                        <span class="pointer">
+                            MXN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MYR" title="MYR" name="eventsSymbol">
+                    <span></span>
+                    <label for="MYR">
+                        <span class="pointer">
+                            MYR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="MZN" title="MZN" name="eventsSymbol">
+                    <span></span>
+                    <label for="MZN">
+                        <span class="pointer">
+                            MZN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="NAD" title="NAD" name="eventsSymbol">
+                    <span></span>
+                    <label for="NAD">
+                        <span class="pointer">
+                            NAD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="NGN" title="NGN" name="eventsSymbol">
+                    <span></span>
+                    <label for="NGN">
+                        <span class="pointer">
+                            NGN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="NIO" title="NIO" name="eventsSymbol">
+                    <span></span>
+                    <label for="NIO">
+                        <span class="pointer">
+                            NIO
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="NOK" title="NOK" name="eventsSymbol">
+                    <span></span>
+                    <label for="NOK">
+                        <span class="pointer">
+                            NOK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="NPR" title="NPR" name="eventsSymbol">
+                    <span></span>
+                    <label for="NPR">
+                        <span class="pointer">
+                            NPR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="NZD" title="NZD" name="eventsSymbol">
+                    <span></span>
+                    <label for="NZD">
+                        <span class="pointer">
+                            NZD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="OMR" title="OMR" name="eventsSymbol">
+                    <span></span>
+                    <label for="OMR">
+                        <span class="pointer">
+                            OMR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="PAB" title="PAB" name="eventsSymbol">
+                    <span></span>
+                    <label for="PAB">
+                        <span class="pointer">
+                            PAB
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="PEN" title="PEN" name="eventsSymbol">
+                    <span></span>
+                    <label for="PEN">
+                        <span class="pointer">
+                            PEN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="PGK" title="PGK" name="eventsSymbol">
+                    <span></span>
+                    <label for="PGK">
+                        <span class="pointer">
+                            PGK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="PHP" title="PHP" name="eventsSymbol">
+                    <span></span>
+                    <label for="PHP">
+                        <span class="pointer">
+                            PHP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="PKR" title="PKR" name="eventsSymbol">
+                    <span></span>
+                    <label for="PKR">
+                        <span class="pointer">
+                            PKR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="PLN" title="PLN" name="eventsSymbol">
+                    <span></span>
+                    <label for="PLN">
+                        <span class="pointer">
+                            PLN
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="PYG" title="PYG" name="eventsSymbol">
+                    <span></span>
+                    <label for="PYG">
+                        <span class="pointer">
+                            PYG
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="QAR" title="QAR" name="eventsSymbol">
+                    <span></span>
+                    <label for="QAR">
+                        <span class="pointer">
+                            QAR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="RON" title="RON" name="eventsSymbol">
+                    <span></span>
+                    <label for="RON">
+                        <span class="pointer">
+                            RON
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="RSD" title="RSD" name="eventsSymbol">
+                    <span></span>
+                    <label for="RSD">
+                        <span class="pointer">
+                            RSD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="RUB" title="RUB" name="eventsSymbol">
+                    <span></span>
+                    <label for="RUB">
+                        <span class="pointer">
+                            RUB
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="RWF" title="RWF" name="eventsSymbol">
+                    <span></span>
+                    <label for="RWF">
+                        <span class="pointer">
+                            RWF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SAR" title="SAR" name="eventsSymbol">
+                    <span></span>
+                    <label for="SAR">
+                        <span class="pointer">
+                            SAR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SBD" title="SBD" name="eventsSymbol">
+                    <span></span>
+                    <label for="SBD">
+                        <span class="pointer">
+                            SBD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SCR" title="SCR" name="eventsSymbol">
+                    <span></span>
+                    <label for="SCR">
+                        <span class="pointer">
+                            SCR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SDG" title="SDG" name="eventsSymbol">
+                    <span></span>
+                    <label for="SDG">
+                        <span class="pointer">
+                            SDG
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SEK" title="SEK" name="eventsSymbol">
+                    <span></span>
+                    <label for="SEK">
+                        <span class="pointer">
+                            SEK
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SGD" title="SGD" name="eventsSymbol">
+                    <span></span>
+                    <label for="SGD">
+                        <span class="pointer">
+                            SGD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SHP" title="SHP" name="eventsSymbol">
+                    <span></span>
+                    <label for="SHP">
+                        <span class="pointer">
+                            SHP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SLL" title="SLL" name="eventsSymbol">
+                    <span></span>
+                    <label for="SLL">
+                        <span class="pointer">
+                            SLL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SOS" title="SOS" name="eventsSymbol">
+                    <span></span>
+                    <label for="SOS">
+                        <span class="pointer">
+                            SOS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SRD" title="SRD" name="eventsSymbol">
+                    <span></span>
+                    <label for="SRD">
+                        <span class="pointer">
+                            SRD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SSP" title="SSP" name="eventsSymbol">
+                    <span></span>
+                    <label for="SSP">
+                        <span class="pointer">
+                            SSP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="STD" title="STD" name="eventsSymbol">
+                    <span></span>
+                    <label for="STD">
+                        <span class="pointer">
+                            STD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SYP" title="SYP" name="eventsSymbol">
+                    <span></span>
+                    <label for="SYP">
+                        <span class="pointer">
+                            SYP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="SZL" title="SZL" name="eventsSymbol">
+                    <span></span>
+                    <label for="SZL">
+                        <span class="pointer">
+                            SZL
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="THB" title="THB" name="eventsSymbol">
+                    <span></span>
+                    <label for="THB">
+                        <span class="pointer">
+                            THB
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TJS" title="TJS" name="eventsSymbol">
+                    <span></span>
+                    <label for="TJS">
+                        <span class="pointer">
+                            TJS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TMT" title="TMT" name="eventsSymbol">
+                    <span></span>
+                    <label for="TMT">
+                        <span class="pointer">
+                            TMT
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TND" title="TND" name="eventsSymbol">
+                    <span></span>
+                    <label for="TND">
+                        <span class="pointer">
+                            TND
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TOP" title="TOP" name="eventsSymbol">
+                    <span></span>
+                    <label for="TOP">
+                        <span class="pointer">
+                            TOP
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TRY" title="TRY" name="eventsSymbol" checked="checked">
+                    <span></span>
+                    <label for="TRY">
+                        <span class="pointer">
+                            TRY
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TTD" title="TTD" name="eventsSymbol">
+                    <span></span>
+                    <label for="TTD">
+                        <span class="pointer">
+                            TTD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TWD" title="TWD" name="eventsSymbol">
+                    <span></span>
+                    <label for="TWD">
+                        <span class="pointer">
+                            TWD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="TZS" title="TZS" name="eventsSymbol">
+                    <span></span>
+                    <label for="TZS">
+                        <span class="pointer">
+                            TZS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="UAH" title="UAH" name="eventsSymbol">
+                    <span></span>
+                    <label for="UAH">
+                        <span class="pointer">
+                            UAH
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="UGX" title="UGX" name="eventsSymbol">
+                    <span></span>
+                    <label for="UGX">
+                        <span class="pointer">
+                            UGX
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="USD" title="USD" name="eventsSymbol" checked="checked">
+                    <span></span>
+                    <label for="USD">
+                        <span class="pointer">
+                            USD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="UYU" title="UYU" name="eventsSymbol">
+                    <span></span>
+                    <label for="UYU">
+                        <span class="pointer">
+                            UYU
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="UZS" title="UZS" name="eventsSymbol">
+                    <span></span>
+                    <label for="UZS">
+                        <span class="pointer">
+                            UZS
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="VEF" title="VEF" name="eventsSymbol">
+                    <span></span>
+                    <label for="VEF">
+                        <span class="pointer">
+                            VEF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="VND" title="VND" name="eventsSymbol">
+                    <span></span>
+                    <label for="VND">
+                        <span class="pointer">
+                            VND
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="VUV" title="VUV" name="eventsSymbol">
+                    <span></span>
+                    <label for="VUV">
+                        <span class="pointer">
+                            VUV
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="WST" title="WST" name="eventsSymbol">
+                    <span></span>
+                    <label for="WST">
+                        <span class="pointer">
+                            WST
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="XAF" title="XAF" name="eventsSymbol">
+                    <span></span>
+                    <label for="XAF">
+                        <span class="pointer">
+                            XAF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="XCD" title="XCD" name="eventsSymbol">
+                    <span></span>
+                    <label for="XCD">
+                        <span class="pointer">
+                            XCD
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="XOF" title="XOF" name="eventsSymbol">
+                    <span></span>
+                    <label for="XOF">
+                        <span class="pointer">
+                            XOF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="XPF" title="XPF" name="eventsSymbol">
+                    <span></span>
+                    <label for="XPF">
+                        <span class="pointer">
+                            XPF
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="YER" title="YER" name="eventsSymbol">
+                    <span></span>
+                    <label for="YER">
+                        <span class="pointer">
+                            YER
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ZAR" title="ZAR" name="eventsSymbol">
+                    <span></span>
+                    <label for="ZAR">
+                        <span class="pointer">
+                            ZAR
+                        </span>
+                    </label>
+                </label>
+             </span>
+                            <span class="col-md-4 col-sm-3 col-xs-2 dropdown-custom-checkbox">
+            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" id="ZMW" title="ZMW" name="eventsSymbol">
+                    <span></span>
+                    <label for="ZMW">
+                        <span class="pointer">
+                            ZMW
+                        </span>
+                    </label>
+                </label>
+             </span>
+                    </li>
+    </div>
+                    <li class="clear-both padding-top-10">
+                <strong>
+                    Notifications
+                </strong>
+            </li>
+                                                        
+    <li style="text-align:left;" class="padding-top-10">
+        <div class="row">
+            <div class="col-xs-12">
+                                                    <form id="calendarNotificationArea" class="align-left form-inline" role="form" novalidate="novalidate">
+                        <div class="margin-bottom-10">
+                            Notify me by email and live notifications:
+                        </div>
+                        <div id="calendarNotificationContent" class="form-body">
+                            <!--Notification minutes Content-->
+                            <div id="calendarNotificationMinutes">
+                                <div class="form-group no-margin">
+                                    <label class="mt-radio mt-radio-outline margin-bottom-12">
+                                        <input type="radio" name="notifyTime" id="notifyTimeMinutesRadioBtn" checked="checked">
+                                        <span></span>
+                                    </label>
+                                    <input id="notifyTimeMinutesInput" name="notifyTimeMinutesInput" type="number" autocomplete="off" inputmode="decimal" class="form-control input-sm timeForCalendarNotification margin-right-10 display-inline-block width-120" value="30" maxlength="4">
+                                    <label>
+                                        minutes before
+                                    </label>
+                                </div>
+                            </div>
+                            <br>
+                            <!--Notification hours Content-->
+                            <div id="calendarNotificationHours">
+                                <div class="form-group no-margin">
+                                    <label class="mt-radio mt-radio-outline margin-bottom-12">
+                                        <input type="radio" name="notifyTime" id="notifyTimeHoursRadioBtn">
+                                        <span></span>
+                                    </label>
+                                    <input id="notifyTimeHoursInput" name="notifyTimeHoursInput" type="number" inputmode="decimal" class="form-control input-sm timeForCalendarNotification margin-right-10 display-inline-block width-120" autocomplete="off" value="" maxlength="4">
+                                    <label>
+                                        hours before
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions margin-top-15">
+                            <div class="text-center">
+                                <input id="calendarSaveButton" type="submit" class="btn btn-sm yellow-casablanca" value="Save">
+                            </div>
+                        </div>
+                    </form>
+                            </div>
+        </div>
+    </li>
+</ul>
+        </div>
+    </div>
+    <div style="clear: both; !important;"></div>
+</div>            <div id="economicCalendarContent">
                                     
 
 
@@ -331,7 +2201,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639517400000" readonly="readonly" ispassed="0">4h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639517400000" readonly="readonly" ispassed="0">4h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -391,7 +2261,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639554300000" readonly="readonly" ispassed="0">14h 29min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639554300000" readonly="readonly" ispassed="0">14h 26min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -451,7 +2321,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639558800000" readonly="readonly" ispassed="0">15h 44min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639558800000" readonly="readonly" ispassed="0">15h 41min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -511,7 +2381,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639562400000" readonly="readonly" ispassed="0">16h 44min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639562400000" readonly="readonly" ispassed="0">16h 41min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -571,7 +2441,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -631,7 +2501,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -691,7 +2561,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -751,7 +2621,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -811,7 +2681,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -871,7 +2741,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -931,7 +2801,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -991,7 +2861,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -1051,7 +2921,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="3" time="1639575000000" readonly="readonly" ispassed="0">20h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -1111,7 +2981,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639580400000" readonly="readonly" ispassed="0">21h 44min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639580400000" readonly="readonly" ispassed="0">21h 41min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -1171,7 +3041,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639580400000" readonly="readonly" ispassed="0">21h 44min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639580400000" readonly="readonly" ispassed="0">21h 41min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -1231,7 +3101,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639582200000" readonly="readonly" ispassed="0">22h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639582200000" readonly="readonly" ispassed="0">22h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -1291,7 +3161,7 @@
     </td>
     <td class="calendarToggleCell no-padding">
             <div>
-            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639582200000" readonly="readonly" ispassed="0">22h 14min</span>
+            <span name="calendarLeft" class="calendarLeft text-center" importance="2" time="1639582200000" readonly="readonly" ispassed="0">22h 11min</span>
         </div>
             <div class="font-green-jungle calendarEventDone" style="display: none">
             <i class="fas fa-check green"></i>
@@ -1804,3 +3674,5 @@
 
     </div>
                             </div>
+        </div>
+    </div>
